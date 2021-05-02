@@ -214,13 +214,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105010723343_initialdbstructure.cs" />
-    <Compile Include="Migrations\202105010723343_initialdbstructure.Designer.cs">
-      <DependentUpon>202105010723343_initialdbstructure.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105010727008_addednewcolumns.cs" />
-    <Compile Include="Migrations\202105010727008_addednewcolumns.Designer.cs">
-      <DependentUpon>202105010727008_addednewcolumns.cs</DependentUpon>
+    <Compile Include="Migrations\202105012231199_initialdbstructure.cs" />
+    <Compile Include="Migrations\202105012231199_initialdbstructure.Designer.cs">
+      <DependentUpon>202105012231199_initialdbstructure.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -332,11 +328,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105010723343_initialdbstructure.resx">
-      <DependentUpon>202105010723343_initialdbstructure.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105010727008_addednewcolumns.resx">
-      <DependentUpon>202105010727008_addednewcolumns.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105012231199_initialdbstructure.resx">
+      <DependentUpon>202105012231199_initialdbstructure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

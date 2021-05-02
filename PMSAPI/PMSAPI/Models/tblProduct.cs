@@ -9,7 +9,7 @@ namespace PMSAPI.Models
         public tblProduct()
         {
             this.ProductOrders = new List<tblProductOrder>();
-            this.ProductOrderPayments = new List<tblProductOrderPayment>();
+            //this.ProductOrderPayments = new List<tblProductOrderPayment>();
         }
         [Key]
         public int ProductId { get; set; }
@@ -24,8 +24,9 @@ namespace PMSAPI.Models
 
         public virtual tblCategory Category { get; set; }
         public virtual ICollection<tblProductOrder> ProductOrders { get; set; }
-       
-        public virtual ICollection<tblProductOrderPayment> ProductOrderPayments { get; set; }
+
+
+        public virtual ICollection<tblProductOrderPayment> tblProductOrderPayment { get; set; }
 
     }
 }

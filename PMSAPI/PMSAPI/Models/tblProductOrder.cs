@@ -10,15 +10,17 @@ namespace PMSAPI.Models
     {
         public tblProductOrder()
         {
-            this.ProductOrderPayments = new List<tblProductOrderPayment>();
+            //this.ProductOrderPayment = new List<tblProductOrderPayment>();
         }
         [Key]
         public int ProductOrderId { get; set; }
         public int OrderId { get; set; }
-        public int ProductId { get; set; }
-
         public virtual tblOrder Order { get; set; }
+        public int ProductId { get; set; }
         public virtual tblProduct Product { get; set; }
-        public virtual ICollection<tblProductOrderPayment> ProductOrderPayments { get; set; }
+
+
+
+        public virtual ICollection<tblProductOrderPayment> ProductOrderPayment { get; set; }
     }
 }

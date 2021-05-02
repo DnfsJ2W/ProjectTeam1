@@ -17,7 +17,7 @@ namespace PMSAPI.Models
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
 
-       
+
         public virtual ICollection<tblProduct> Products { get; set; }
 
 

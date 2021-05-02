@@ -20,13 +20,6 @@ namespace PMSAPI.Models
         public string Pincode { get; set; }
         public string StreetAddress { get; set; }
 
-
-
-
-        public virtual ICollection<tblOrder> Orders { get; set; }
-        public virtual ICollection<tblProductOrderPayment> ProductOrderPayments { get; set; }
-
-
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -45,19 +38,6 @@ namespace PMSAPI.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //solve cascading problem
-            modelBuilder
-        .Entity<tblProductOrder>()
-            .HasOptional(e => e.ProductOrderPayments)
-            .WithMany()
-            .WillCascadeOnDelete(false);
-
-            //change table name
-            //modelBuilder.Entity<ApplicationUser>()
-            //        .ToTable("tblRegistration", "dbo").Property(p => p.Id).HasColumnName("UserId");       //change table name
-            //modelBuilder.Entity<ApplicationUser>()
-            //        .ToTable("tblRegistration", "dbo").Property(p => p.Id).HasColumnName("UserId"); 
-
         }
 
         public static ApplicationDbContext Create()
@@ -69,10 +49,8 @@ namespace PMSAPI.Models
         public DbSet<tblPayment> Payments { get; set; }
         public DbSet<tblProduct> Products { get; set; }
         public DbSet<tblProductOrder> ProductOrder { get; set; }
-        public DbSet<tblProductOrderPayment> ProductOrderPayments { get; set; }
-        public DbSet<tblTracking> Trackings { get; set; }
-        public DbSet<tblUser> Registration { get; set; }
-
+        public DbSet<tblProductOrderPayment> ProductOrderPayment { get; set; }
+        public DbSet<tblTracking> Tracking { get; set; }
 
     }
 }

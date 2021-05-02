@@ -125,7 +125,7 @@ namespace PMSAPI.Controllers
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
                 model.NewPassword);
-            
+
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -258,9 +258,9 @@ namespace PMSAPI.Controllers
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                
-                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    OAuthDefaults.AuthenticationType);
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                   OAuthDefaults.AuthenticationType);
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
@@ -328,6 +328,44 @@ namespace PMSAPI.Controllers
                 return BadRequest(ModelState);
             }
 
+            var user = new ApplicationUser()
+            {
+                IsAdmin = model.IsAdmin,
+                CreatedDate = model.CreatedDate,
+                Country = model.Country,
+                State = model.State,
+                City = model.City,
+                Pincode = model.Pincode,
+                StreetAddress = model.StreetAddress,
+                Email = model.Email,
+                EmailConfirmed = model.EmailConfirmed,
+                PhoneNumber = model.PhoneNumber,
+                PhoneNumberConfirmed = model.PhoneNumberConfirmed,
+                TwoFactorEnabled = model.TwoFactorEnabled,
+                LockoutEnabled = model.LockOutEnabled,
+                UserName = model.UserName
+            };
+
+
+            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return GetErrorResult(result);
+            }
+
+            return Ok();
+        }
+
+
+
+        public async Task<IHttpActionResult> RegisterUser(RegisterBindingModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
@@ -368,7 +406,7 @@ namespace PMSAPI.Controllers
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }

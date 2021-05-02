@@ -8,8 +8,9 @@ namespace PMSAPI.Models
 {
     public class tblPayment
     {
-         [Key]
+        [Key]
         public int PaymentId { get; set; }
         public string PaymentType { get; set; }
+        public virtual ICollection<tblProductOrderPayment> ProductOrderPayments { get; set; } = new List<tblProductOrderPayment>();
     }
 }

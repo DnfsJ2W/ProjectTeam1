@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +11,7 @@ namespace PMSAPI.Models
     {
         [Key]
         public int TrackId { get; set; }
+        [ForeignKey("Order")]
         public int OrderId { get; set; }
         public DateTime EstimatedDate { get; set; }
 
