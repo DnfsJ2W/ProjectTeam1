@@ -22,6 +22,8 @@ namespace PMSAPI.Models
         public int Quantity { get; set; }
         public string StockStatus { get; set; }
 
+        public byte[] ImageByteCode { get; set; }
+        public string Path { get; set; }
         public virtual tblCategory Category { get; set; }
         public virtual ICollection<tblProductOrder> ProductOrders { get; set; }
 
