@@ -28,16 +28,29 @@ export class SignUpComponent implements OnInit {
       Password: '',
       Email: '',
       FirstName: '',
-      LastName: ''
+      LastName: '',
+       PhoneNumber:'',
+    State:'',
+    Country:'',
+    City:'',
+    PinCode:'',
+    StreetAddress:'',
+    ConfirmPassword:''
+
+
+
     }
   }
 
   OnSubmit(form: NgForm) {
     this.userService.registerUser(form.value)
       .subscribe((data: any) => {
+debugger;
+        console.log(data)
         if (data.Succeeded == true) {
           this.resetForm(form);
           this.toastr.success('User registration successful');
+          debugger;
           this.router.navigate(['/login']);
         }
         else

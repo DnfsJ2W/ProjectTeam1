@@ -16,10 +16,17 @@ export class UserService {
       Password: user.Password,
       Email: user.Email,
       FirstName: user.FirstName,
-      LastName: user.LastName
+      LastName: user.LastName,
+      PhoneNumber:user.PhoneNumber,
+      State:user.State,
+      Country:user.Country,
+      City:user.City,
+      PinCode:user.PinCode,
+      StreetAddress:user.StreetAddress,
+      ConfirmPassword:user.ConfirmPassword
     }
-    var reqHeader = new HttpHeaders({'No-Auth':'True'});
-    return this.http.post(this.rootUrl + '/api/User/Register', body,{headers : reqHeader});
+    var reqHeader = new HttpHeaders({'No-Auth':'True','Content-Type': 'application/json'});
+    return this.http.post(this.rootUrl + '/api/Account/Register', body,{ headers: reqHeader });
   }
 
   userAuthentication(userName, password) {

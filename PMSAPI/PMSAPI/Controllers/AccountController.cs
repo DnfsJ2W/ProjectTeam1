@@ -22,7 +22,7 @@ namespace PMSAPI.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
-   //[EnableCors("*","*","*")]
+    [EnableCors("*","*","*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
@@ -321,63 +321,77 @@ namespace PMSAPI.Controllers
         }
 
         // POST api/Account/Register
+        //[AllowAnonymous]
+        //[Route("Register")]
+        //public async Task<IHttpActionResult> Register(RegisterBindingModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    var user = new ApplicationUser()
+        //    {
+        //        IsAdmin = model.IsAdmin,
+        //        CreatedDate = model.CreatedDate,
+        //        Country = model.Country,
+        //        State = model.State,
+        //        City = model.City,
+        //        Pincode = model.Pincode,
+        //        StreetAddress = model.StreetAddress,
+        //        Email = model.Email,
+        //        EmailConfirmed = model.EmailConfirmed,
+        //        PhoneNumber = model.PhoneNumber,
+        //        PhoneNumberConfirmed = model.PhoneNumberConfirmed,
+        //        TwoFactorEnabled = model.TwoFactorEnabled,
+        //        LockoutEnabled = model.LockOutEnabled,
+        //        UserName = model.UserName
+        //    };
+
+
+        //    IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+        //    if (!result.Succeeded)
+        //    {
+        //        return GetErrorResult(result);
+        //    }
+
+        //    return Ok();
+        //}
+
         [AllowAnonymous]
         [Route("Register")]
-        public async Task<IHttpActionResult> Register(RegisterBindingModel model)
+
+        public async Task<IdentityResult> RegisterUser(RegisterBindingModel model)
         {
-            if (!ModelState.IsValid)
+            IdentityResult result = new IdentityResult();
+            DateTime myDateTime = DateTime.Now;
+            string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            if (ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                var user = new ApplicationUser()
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    CreatedDate = DateTime.Now,
+                    Country = model.Country,
+                    State = model.State,
+                    City = model.City,
+                    Pincode = model.Pincode,
+                    StreetAddress = model.StreetAddress,
+                    PhoneNumber = model.PhoneNumber
+                };
+                try
+                {
+                    result = await UserManager.CreateAsync(user, model.Password);
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
+            return result;
 
-            var user = new ApplicationUser()
-            {
-                IsAdmin = model.IsAdmin,
-                CreatedDate = model.CreatedDate,
-                Country = model.Country,
-                State = model.State,
-                City = model.City,
-                Pincode = model.Pincode,
-                StreetAddress = model.StreetAddress,
-                Email = model.Email,
-                EmailConfirmed = model.EmailConfirmed,
-                PhoneNumber = model.PhoneNumber,
-                PhoneNumberConfirmed = model.PhoneNumberConfirmed,
-                TwoFactorEnabled = model.TwoFactorEnabled,
-                LockoutEnabled = model.LockOutEnabled,
-                UserName = model.UserName
-            };
-
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
-
-            return Ok();
-        }
-
-
-
-        public async Task<IHttpActionResult> RegisterUser(RegisterBindingModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
-
-            return Ok();
         }
 
         // POST api/Account/RegisterExternal

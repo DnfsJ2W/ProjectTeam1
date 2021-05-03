@@ -5,17 +5,22 @@
       <label data-error="Required field!">UserName</label>
     </div>
     <div class="input-field col s6">
-      <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="3">
-      <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 3 characters needed'):''">Password</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
       <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern">
       <label data-error="Invalid email!">Email</label>
     </div>
+    
   </div>
   <div class="row">
+    <div class="input-field col s6">
+      <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required minlength="3">
+      <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 3 characters needed'):''">Password</label>
+    </div>
+    <div class="input-field col s6">
+      <input class="validate" type="password" name="ConfirmPassword" #ConfirmPassword="ngModel" [(ngModel)]="user.ConfirmPassword" required minlength="3">
+      <label [attr.data-error]="ConfirmPassword.errors!=null?(ConfirmPassword.errors.required?'Required field!':'Minimum 3 characters needed'):''">Confirm Password</label>
+    </div>
+    </div>
+    <div class="row">
     <div class="input-field col s6">
       <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName">
       <label>First Name</label>
@@ -25,6 +30,39 @@
       <label>Last Name</label>
     </div>
   </div>
+  <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="PhoneNumber" #PhoneNumber="ngModel" [(ngModel)]="user.PhoneNumber">
+        <label>Phone Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="Country" #Country="ngModel" [(ngModel)]="user.Country">
+        <label>Country</label>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="input-field col s6">
+        <input type="text" name="State" #State="ngModel" [(ngModel)]="user.State">
+        <label>State</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="City" #City="ngModel" [(ngModel)]="user.City">
+        <label>City</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="StreetAddress" #StreetAddress="ngModel" [(ngModel)]="user.StreetAddress">
+        <label>Street Address</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" name="PinCode" #PinCode="ngModel" [(ngModel)]="user.PinCode">
+        <label>Pincode</label>
+      </div>
+    </div>
+ 
+  
   <div class="row">
     <div class="input-field col s12">
       <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>

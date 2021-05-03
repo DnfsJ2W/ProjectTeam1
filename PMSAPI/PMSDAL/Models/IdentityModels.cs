@@ -20,6 +20,9 @@ namespace PMSDAL.Models
         public string Pincode { get; set; }
         public string StreetAddress { get; set; }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

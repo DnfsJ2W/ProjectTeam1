@@ -21,7 +21,7 @@ namespace PMSAPI
             // Web API routes
             config.MapHttpAttributeRoutes();
             //EnableCorsAttribute corsobj = new EnableCorsAttribute("*","*","*");
-            //config.EnableCors();
+            //config.EnableCors(corsobj);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

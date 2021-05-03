@@ -79,7 +79,7 @@ namespace PMSAPI.Controllers
             {
                 tblProduct product = new tblProduct();
                 var httpRequest = HttpContext.Current.Request;
-               // product.ProductImage = httpRequest["PImage"];
+                product.ProductImage = httpRequest["PImage"];
                 string PName = httpRequest["PName"];
                  product.ProductName = PName.Replace("\n", "");
                 product.ProductDescription = httpRequest["Pdescription"];

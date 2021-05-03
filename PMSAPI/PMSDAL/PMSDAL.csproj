@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFramework>net4.7.2</TargetFramework>
   </PropertyGroup>
 

@@ -24,6 +24,49 @@ debugger;
          )
 
     }
+    endpoint = 'https://localhost:44326/api/';
+  
+    getProduct(PID: number) {
+      return this.http.get(this.endpoint+'/GetProduct/'+PID);
+    }
+    postProduct(PID: number, PName: string, ProductImage: string,Pdescription: string,categoryId: any, fileToUpload: File,Price: string, Discount: string,PQuantity: string, PStatus: string,Path:string,ImageCode:any) {
+        //const endpoint = 'https://localhost:44335/api/UpdateProduct/1';
+    
+        const formData: FormData = new FormData();
+        formData.append('PImage', fileToUpload, fileToUpload.name);
+        formData.append('PName', PName);
+        formData.append('ProductImage', ProductImage);
+        formData.append('Pdescription', Pdescription);
+        formData.append('Discount', Discount);
+        formData.append('Price', Price);
+        formData.append('CategoryId', categoryId);
+        formData.append('PQuantity', PQuantity);
+        formData.append('PStatus', PStatus);
+        formData.append('Path', Path);
+        formData.append('ImageCode', ImageCode);
+        console.log(PID+PName)
+        console.log('service code')
+        return this.http.post(this.endpoint+'/AddProduct', formData);
+      }
+      putProduct(PID: number, PName: string, ProductImage: string,Pdescription: string,categoryId: any, fileToUpload: File,Price: string, Discount: string,PQuantity: string, PStatus: string,Path:string,ImageCode:any) {
+        //const endpoint = 'https://localhost:44335/api/UpdateProduct/1';
+    
+        const formData: FormData = new FormData();
+        //formData.append('Image', fileToUpload, fileToUpload.name);
+        formData.append('PName', PName);
+        formData.append('ProductImage', ProductImage);
+        formData.append('Pdescription', Pdescription);
+        formData.append('Discount', Discount);
+        formData.append('Price', Price);
+        formData.append('CategoryId', categoryId);
+        formData.append('PQuantity', PQuantity);
+        formData.append('PStatus', PStatus);
+        formData.append('Path', Path);
+        formData.append('ImageCode', ImageCode);
+        console.log(PID+PName)
+        console.log('service code')
+        return this.http.put(this.endpoint+'UpdateProduct/'+PID, formData);
+      }
          //.pipe(
              //map((res:Response) => res.json())
              //catchError((error: HttpErrorResponse) => { 
