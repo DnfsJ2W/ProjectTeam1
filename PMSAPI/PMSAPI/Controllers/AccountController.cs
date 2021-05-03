@@ -13,14 +13,16 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using PMSAPI.Models;
+using PMSDAL.Models;
 using PMSAPI.Providers;
 using PMSAPI.Results;
+using System.Web.Http.Cors;
 
 namespace PMSAPI.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+   //[EnableCors("*","*","*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
