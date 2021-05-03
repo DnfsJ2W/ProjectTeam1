@@ -1,4 +1,0 @@
-D:\Product Management System\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net5.0\PMSDAL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Product Management System\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net5.0\PMSDAL.AssemblyInfoInputs.cache
-D:\Product Management System\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net5.0\PMSDAL.AssemblyInfo.cs
-D:\Product Management System\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net5.0\PMSDAL.csproj.CoreCompileInputs.cache
