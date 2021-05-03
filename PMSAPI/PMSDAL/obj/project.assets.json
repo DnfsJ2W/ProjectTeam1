@@ -334,11 +334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Product Management System\\ProjectTeam1\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
+      "projectUniqueName": "D:\\Product Management System\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
       "projectName": "PMSDAL",
-      "projectPath": "D:\\Product Management System\\ProjectTeam1\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
+      "projectPath": "D:\\Product Management System\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
       "packagesPath": "C:\\Users\\ycs\\.nuget\\packages\\",
-      "outputPath": "D:\\Product Management System\\ProjectTeam1\\PMSAPI\\PMSDAL\\obj\\",
+      "outputPath": "D:\\Product Management System\\PMSAPI\\PMSDAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ycs\\AppData\\Roaming\\NuGet\\NuGet.Config",

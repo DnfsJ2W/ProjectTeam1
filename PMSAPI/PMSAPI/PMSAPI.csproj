@@ -220,13 +220,14 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105012231199_initialdbstructure.cs" />
-    <Compile Include="Migrations\202105012231199_initialdbstructure.Designer.cs">
-      <DependentUpon>202105012231199_initialdbstructure.cs</DependentUpon>
+    <Compile Include="Migrations\202105030624037_initialdb.cs" />
+    <Compile Include="Migrations\202105030624037_initialdb.designer.cs">
+      <DependentUpon>202105030624037_initialdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ProductImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -327,15 +329,15 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105012231199_initialdbstructure.resx">
-      <DependentUpon>202105012231199_initialdbstructure.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\PMSDAL\PMSDAL.csproj">
       <Project>{2b71bce6-b718-406f-bfcd-83f81bd5d1b0}</Project>
       <Name>PMSDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105030624037_initialdb.resx">
+      <DependentUpon>202105030624037_initialdb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
