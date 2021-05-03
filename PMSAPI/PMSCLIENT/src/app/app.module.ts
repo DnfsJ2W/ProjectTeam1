@@ -25,6 +25,8 @@ import { CartRoutingModule } from './pages/cart/cart-page-routing.module';
 import { CategoryModule } from './pages/category/category.module';
 import { CartPageModule } from './pages/cart/cart-page.module';
 import { ProductModule } from './pages/product/product.module';
+import { AddProductsComponent } from './add-products/add-products.component';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { ProductModule } from './pages/product/product.module';
         SignUpComponent,
         UserComponent,
         SignInComponent,
-        HomeComponent
+        HomeComponent,
+        AddProductsComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -48,6 +51,7 @@ import { ProductModule } from './pages/product/product.module';
         CategoryModule,
         CartPageModule,
         ProductModule,
+        AddProductsComponent
 
         
     ],
