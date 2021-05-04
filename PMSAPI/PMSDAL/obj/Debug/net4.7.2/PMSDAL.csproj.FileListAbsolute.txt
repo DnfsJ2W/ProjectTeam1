@@ -39,3 +39,24 @@ D:\Product Management System\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.csproj.Copy
 D:\Product Management System\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.dll
 D:\Product Management System\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.pdb
 D:\Product Management System\PMSAPI\PMSDAL\bin\Debug\net4.7.2\PMSDAL.dll.config
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\PMSDAL.dll.config
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\PMSDAL.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\PMSDAL.pdb
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\EntityFramework.SqlServer.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\EntityFramework.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.AspNet.Identity.Core.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.AspNet.Identity.Owin.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.Owin.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.Owin.Security.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.Owin.Security.Cookies.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Microsoft.Owin.Security.OAuth.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Newtonsoft.Json.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\bin\Debug\net4.7.2\Owin.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.csprojAssemblyReference.cache
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.AssemblyInfoInputs.cache
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.AssemblyInfo.cs
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.csproj.CoreCompileInputs.cache
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.csproj.CopyComplete
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.dll
+E:\PmsFinally\ProjectTeam1\PMSAPI\PMSDAL\obj\Debug\net4.7.2\PMSDAL.pdb

@@ -329,19 +329,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ycs\\.nuget\\packages\\": {}
+    "C:\\Users\\YCS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Product Management System\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
+      "projectUniqueName": "E:\\PmsFinally\\ProjectTeam1\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
       "projectName": "PMSDAL",
-      "projectPath": "D:\\Product Management System\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
-      "packagesPath": "C:\\Users\\ycs\\.nuget\\packages\\",
-      "outputPath": "D:\\Product Management System\\PMSAPI\\PMSDAL\\obj\\",
+      "projectPath": "E:\\PmsFinally\\ProjectTeam1\\PMSAPI\\PMSDAL\\PMSDAL.csproj",
+      "packagesPath": "C:\\Users\\YCS\\.nuget\\packages\\",
+      "outputPath": "E:\\PmsFinally\\ProjectTeam1\\PMSAPI\\PMSDAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ycs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\YCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -384,7 +384,7 @@
             "version": "[13.0.1, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
