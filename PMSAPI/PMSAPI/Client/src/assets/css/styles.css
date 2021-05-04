@@ -3,7 +3,6 @@ body {
   font-family: Roboto;
   font-size: 14px;
   line-height: 1.666;
-  padding-top: 70px;
 }
 .main-header {
   color: #1d1d20;
@@ -54,6 +53,12 @@ body {
 .header-cart {
   text-align: right;
   margin-right: 30px;
+}
+.header-image {
+  height: 400px;
+  background: url("../imgs/plates-header.jpg") no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 /* Login Page */
 .button {

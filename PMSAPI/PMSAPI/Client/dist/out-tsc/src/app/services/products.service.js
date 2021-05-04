@@ -9,7 +9,6 @@ let ProductService = class ProductService {
         this.endpoint = 'https://localhost:44326/api/';
     }
     getProducts(dataURL) {
-        debugger;
         //console.log(this.http.get<Product[]>(dataURL));
         return this.http.get(dataURL).pipe(map((res) => {
             return res.json();

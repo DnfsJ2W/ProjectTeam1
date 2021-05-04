@@ -34,12 +34,10 @@ let SignUpComponent = class SignUpComponent {
     OnSubmit(form) {
         this.userService.registerUser(form.value)
             .subscribe((data) => {
-            debugger;
             console.log(data);
             if (data.Succeeded == true) {
                 this.resetForm(form);
                 this.toastr.success('User registration successful');
-                debugger;
                 this.router.navigate(['/login']);
             }
             else

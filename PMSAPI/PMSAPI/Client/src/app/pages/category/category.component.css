@@ -1,9 +1,3 @@
-.header-image {
-  height: 400px;
-  background: url("./Scripts/client/assets/imgs/plates-header.jpg") no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
 .header-block {
     height: 100%;
     background-color: #3A3A35;

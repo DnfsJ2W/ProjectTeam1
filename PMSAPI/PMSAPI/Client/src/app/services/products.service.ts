@@ -13,7 +13,6 @@ export class ProductService {
     public getProducts(dataURL:string){
    
 
-debugger;
 //console.log(this.http.get<Product[]>(dataURL));
          return this.http.get(dataURL).pipe(
              map((res:Response) => {

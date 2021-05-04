@@ -76,7 +76,6 @@ export class AddProductsComponent implements OnInit {
   }
 
    OnSubmit(PID, ProductName,ProductImage,Pdescription,categoryId,Image,Price,Discount,Quantity,IsStock,Path,ImageCode){
-     debugger;
     /*this.productService.postProduct(PID,ProductName,ProductImage,Pdescription,categoryId,this.fileToUpload,Price,Discount,Quantity,IsStock,Path,ImageCode).subscribe(
       data =>{
         console.log('done');

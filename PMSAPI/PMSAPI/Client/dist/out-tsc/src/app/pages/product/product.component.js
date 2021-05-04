@@ -10,7 +10,6 @@ let ProductComponent = class ProductComponent {
         this.cartService = cartService;
         this.quantity = 1;
         this.getProduct = (id) => {
-            debugger;
             this.sub = this.productService.getProducts('./Scripts/client/assets/mock-data/products.json')
                 .subscribe(res => {
                 this.product = res[id - 1];
