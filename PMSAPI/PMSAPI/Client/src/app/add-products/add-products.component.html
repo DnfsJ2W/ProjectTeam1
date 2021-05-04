@@ -1,68 +1,64 @@
 <div class="container">
-    <div class="row">
-      <div class="col s8 offset-2">
-        <div class="card-panel teal lighten-2">
-          <h4 class="center white-text">Product Details</h4>
-        </div>
-        <form #imageForm=ngForm (ngSubmit)="OnSubmit(PID,ProductName,ProductImage,Pdescription,categoryId,Image,Price,Discount,Quantity,IsStock,Path,ImageCode)">
-          <div class="row">
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='ProductName' name="ProductName" id="ProductName" required>
-              <label for="ProductName">Product Name</label>
-            </div>
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='ProductImage' name="ProductImage" id="ProductImage" required>
-              <label for="ProductImage">Image Name</label>
-            </div>
-            
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='Pdescription' name="Pdescription" id="Pdescription" required>
-              <label for="Pdescription">Description</label>
-            </div>
-  
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='categoryId' name="categoryId" id="categoryId" required>
-              <label for="categoryId">Category</label>
-            </div>
-  
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='Price' name="Price" id="Price" required>
-              <label for="Price">Price</label>
-            </div>
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='Discount' name="Discount" id="Discount" required>
-              <label for="Discount">Discount</label>
-            </div>
-            <div class="input-field col s12">
-              <input type="text" placeholder="" [(ngModel)]='Quantity' name="Quantity" id="Quantity" required>
-              <label for="Quantity">Quantity</label>
-            </div>
-            <div class="input-field col s12">
-              <label>
-                <input [(ngModel)]='IsStock' type="checkbox" class="blue-grey lighten-5" name="IsStock" id="IsStock" required/>
-                <span>Stock</span>
-              </label>
-            </div>
-          </div>
-          <img [src]="imageUrl"  style="width:250px;height:200px">
-  
-          <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
-          <button type="submit" class="btn-large btn-submit">Submit</button>
-        </form>
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel teal lighten-2">
+        <h4 class="center white-text">Product Details</h4>
       </div>
-    </div>
-  
-  
-          <div class="col-md-12">
-  
-              <div *ngIf=retrievedImage>
-  
-                  <img [src]="retrievedImage" alt="Click N Buy!">
-  
-              </div>
-  
+      <form #imageForm=ngForm (ngSubmit)="OnSubmit(PID,ProductName,ProductImage,Pdescription,categoryId,Image,Price,Discount,Quantity,IsStock,Path,ImageCode)">
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" placeholder="" [(ngModel)]='ProductName' name="ProductName" id="ProductName" required>
+            <label for="ProductName">Product Name</label>
           </div>
-  
+          <div class="input-field col s12">
+            <input type="text" placeholder="" [(ngModel)]='ProductImage' name="ProductImage" id="ProductImage" required>
+            <label for="ProductImage">Image Name</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input type="text" placeholder="" [(ngModel)]='Pdescription' name="Pdescription" id="Pdescription" required>
+            <label for="Pdescription">Description</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input type="text" placeholder="" [(ngModel)]='Price' name="Price" id="Price" required>
+            <label for="Price">Price</label>
+          </div>
+          <div class="input-field col s12">
+            <input type="text" placeholder="" [(ngModel)]='Discount' name="Discount" id="Discount" required>
+            <label for="Discount">Discount</label>
+          </div>
+          <div class="input-field col s12">
+            <input type="text" placeholder="" [(ngModel)]='Quantity' name="Quantity" id="Quantity" required>
+            <label for="Quantity">Quantity</label>
+          </div>
+          <div class="col s12">
+            <!--<label>-->
+              <mat-checkbox [(ngModel)]='IsStock' name="IsStock" id="IsStock" checked="true" required>
+                <span>Stock</span>
+              </mat-checkbox>
+            <!--</label>-->
+          </div>
+        </div>
+        <img [src]="imageUrl" style="width:250px;height:150px;margin-top:30px">
+
+        <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+        <button type="submit" class="btn-large btn-submit">Submit</button>
+      </form>
+    </div>
   </div>
-  
-  
+
+
+  <div class="col-md-12">
+
+    <div *ngIf=retrievedImage>
+
+      <img [src]="retrievedImage" alt="Click N Buy!">
+
+    </div>
+
+  </div>
+
+</div>
+
+

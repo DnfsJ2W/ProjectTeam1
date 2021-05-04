@@ -26,7 +26,8 @@ import { CategoryModule } from './pages/category/category.module';
 import { CartPageModule } from './pages/cart/cart-page.module';
 import { ProductModule } from './pages/product/product.module';
 import { AddProductsComponent } from './add-products/add-products.component';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -51,6 +52,8 @@ import { AddProductsComponent } from './add-products/add-products.component';
         CategoryModule,
         CartPageModule,
         ProductModule,
+        MatGridListModule,
+        MatCheckboxModule
 
         
     ],

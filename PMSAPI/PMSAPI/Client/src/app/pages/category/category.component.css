@@ -4,7 +4,7 @@
     color:white;
     width: 50%;
     margin:auto;
-    border-color:white;
+    border-color:blueviolet;
     border-style:solid;
     border-width: 0 15px;
     display:table;
@@ -32,8 +32,10 @@
     margin-left: auto;
 }
 .product-grid {
+    width: 50%;
     padding-top: 5%;
     padding-bottom: 5%;
+    margin: auto;
 }
 .product-image {
     width: 100%;

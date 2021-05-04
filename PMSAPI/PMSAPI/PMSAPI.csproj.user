@@ -12,6 +12,7 @@
     <ActiveDebugTarget>
     </ActiveDebugTarget>
     <ProjectView>ShowAllFiles</ProjectView>
+    <ToolsVersionPromptShown>4.1</ToolsVersionPromptShown>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

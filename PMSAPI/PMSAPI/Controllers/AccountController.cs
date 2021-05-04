@@ -366,7 +366,6 @@ namespace PMSAPI.Controllers
         {
             IdentityResult result = new IdentityResult();
             DateTime myDateTime = DateTime.Now;
-            string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser()

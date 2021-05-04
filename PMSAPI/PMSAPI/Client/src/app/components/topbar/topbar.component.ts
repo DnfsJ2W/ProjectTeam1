@@ -34,7 +34,8 @@ import {CartService} from "../../services/cart.service";
                         <span><i class="fa fa-shopping-cart fa-2x"></i> <span *ngIf="cart_num">( {{cart_num}} )</span></span>
                     </div>
                     <div class="header-cart-item">
-                        <a href="">MY CART <span *ngIf="cart_num">( {{cart_num}} )</span><span class="fa fa-caret-down"></span></a>
+                        <a href="">MY CART <span *ngIf="cart_num">( {{cart_num}} )</span><span class="fa fa-caret-down"></span><i class="material-icons prefix cart-image">shopping_cart</i></a>
+                        
                     </div>
                 </div>
             </div>

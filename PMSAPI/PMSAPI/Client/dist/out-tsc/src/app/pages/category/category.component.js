@@ -9,8 +9,7 @@ let CategoryComponent = class CategoryComponent {
         this.cartService = cartService;
         this.router = router;
         this.load = () => {
-            debugger;
-            this.sub = this.productService.getProducts('.Scripts\\client\\assets\\mock-data\\products.json').subscribe(data => {
+            this.sub = this.productService.getProducts('.\\Scripts\\client\\assets\\mock-data\\products.json').subscribe(data => {
                 console.log(data);
                 this.products = data;
             }, err => {

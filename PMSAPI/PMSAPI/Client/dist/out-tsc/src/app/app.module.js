@@ -24,6 +24,8 @@ import { CategoryModule } from './pages/category/category.module';
 import { CartPageModule } from './pages/cart/cart-page.module';
 import { ProductModule } from './pages/product/product.module';
 import { AddProductsComponent } from './add-products/add-products.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -36,7 +38,7 @@ AppModule = __decorate([
             UserComponent,
             SignInComponent,
             HomeComponent,
-            AddProductsComponent
+            AddProductsComponent,
         ],
         imports: [
             BrowserAnimationsModule,
@@ -49,6 +51,8 @@ AppModule = __decorate([
             CategoryModule,
             CartPageModule,
             ProductModule,
+            MatGridListModule,
+            MatCheckboxModule
         ],
         providers: [
             CartService,

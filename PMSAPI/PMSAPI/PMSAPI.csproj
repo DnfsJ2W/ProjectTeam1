@@ -238,6 +238,10 @@
     <Compile Include="Migrations\202105031658493_addednewcolumn.designer.cs">
       <DependentUpon>202105031658493_addednewcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105042330025_delcategory.cs" />
+    <Compile Include="Migrations\202105042330025_delcategory.designer.cs">
+      <DependentUpon>202105042330025_delcategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -432,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105031658493_addednewcolumn.resx">
       <DependentUpon>202105031658493_addednewcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105042330025_delcategory.resx">
+      <DependentUpon>202105042330025_delcategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

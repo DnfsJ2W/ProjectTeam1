@@ -83,7 +83,6 @@ namespace PMSAPI.Controllers
                 string PName = httpRequest["PName"];
                  product.ProductName = PName.Replace("\n", "");
                 product.ProductDescription = httpRequest["Pdescription"];
-                product.CategoryId = Convert.ToInt32(httpRequest["categoryId"]);
                 product.Quantity = Convert.ToInt32(httpRequest["PQuantity"]);
                 product.StockStatus = httpRequest["PStatus"];
 

@@ -4,12 +4,16 @@ body {
   font-size: 14px;
   line-height: 1.666;
 }
+.cart-image {
+    top: 40px
+}
 .main-header {
-  color: #1d1d20;
+  color: #e28743;
   vertical-align: middle;
   display: table;
   width: 100%;
-  background-color: #fff;
+  background-color: #1e81b0;
+  position:relative
 }
 .main-header .header-menu {
   display: table;

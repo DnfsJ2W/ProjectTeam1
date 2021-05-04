@@ -48,7 +48,6 @@ namespace PMSDAL.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<tblCategory> Categories { get; set; }
         public DbSet<tblOrder> Orders { get; set; }
         public DbSet<tblPayment> Payments { get; set; }
         public DbSet<tblProduct> Products { get; set; }

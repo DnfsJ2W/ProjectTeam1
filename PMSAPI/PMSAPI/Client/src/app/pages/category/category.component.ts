@@ -23,7 +23,6 @@ export class CategoryComponent implements OnInit {
         this.load();
     }
   load = () => {
-    debugger;
       this.sub = this.productService.getProducts('.\\Scripts\\client\\assets\\mock-data\\products.json').subscribe(
         data => {
           console.log(data);

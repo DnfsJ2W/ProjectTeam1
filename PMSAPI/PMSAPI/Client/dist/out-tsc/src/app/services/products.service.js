@@ -28,7 +28,7 @@ let ProductService = class ProductService {
         return body || {};
     }
     getProducts(dataURL) {
-        return this.http.get(dataURL, httpOptions).pipe(map(this.extractData), catchError(this.handleError));
+        return this.http.get(dataURL, httpOptions).pipe(map((res) => res), catchError(this.handleError));
     }
     getProduct(PID) {
         return this.http.get(this.endpoint + '/GetProduct/' + PID);

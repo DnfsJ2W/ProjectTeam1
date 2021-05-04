@@ -1,7 +1,4 @@
 import { __decorate, __metadata } from "tslib";
-/**
- * Created by andrew.yang on 7/31/2017.
- */
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 let QuantityControlComponent = class QuantityControlComponent {
     constructor() {

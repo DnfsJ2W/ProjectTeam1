@@ -21,7 +21,7 @@ export class AddProductsComponent implements OnInit {
   Price:any;
   Discount:any;
   Quantity:any;
-  IsStock:any;
+  IsStock:boolean;
   Path:any;
   retrievedImage:any;
   base64Data: any;

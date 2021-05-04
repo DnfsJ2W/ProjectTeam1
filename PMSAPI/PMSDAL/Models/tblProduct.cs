@@ -17,14 +17,12 @@ namespace PMSDAL.Models
         public string ProductDescription { get; set; }
         public string ProductImage { get; set; }
         public decimal Price { get; set; }
-        public int CategoryId { get; set; }
         public string Discount { get; set; }
         public int Quantity { get; set; }
         public string StockStatus { get; set; }
 
         public byte[] ImageByteCode { get; set; }
         public string Path { get; set; }
-        public virtual tblCategory Category { get; set; }
         public virtual ICollection<tblProductOrder> ProductOrders { get; set; }
 
 
