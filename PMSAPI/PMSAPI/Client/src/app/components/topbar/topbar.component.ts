@@ -13,7 +13,7 @@ import {CartService} from "../../services/cart.service";
                 </button>
             </div>
             <div class="header-logo-wrapper">
-                <img class="header-logo-image" src=".\\assets\\imgs\\logobysumit.png" alt="Click N Buy!">
+                <img class="header-logo-image" src=".\\Scripts\\client\\assets\\imgs\\logobysumit.png" alt="Click N Buy!">
             </div>
             <div class="header-nav-wrapper">
                 <ul class="header-nav">
@@ -24,7 +24,7 @@ import {CartService} from "../../services/cart.service";
                         <a routerLink="/">PRODUCTS<span class="fa fa-caret-down"></span></a>
                     </li>
                     <li class="header-nav-item">
-                        <a routerLink="/">LOGIN</a>
+                        <a routerLink="/login">LOGIN</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@ import {CartService} from "../../services/cart.service";
                 <a routerLink="/">PRODUCTS</a>
             </li>
             <li>
-                <a routerLink="/">LOGIN</a>
+                <a routerLink="/login">LOGIN</a>
             </li>
         </ul>
         <cart-popup></cart-popup>

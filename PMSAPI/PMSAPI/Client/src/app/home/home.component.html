@@ -1,10 +1,13 @@
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper ">
     <a href="#" class="brand-logo center">
-      <i class="material-icons">cloud</i>Dotnet Mob App</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <i class="material-icons">dashboard</i>Dashboard</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down increasetext" >
       <li>
+      
         <a (click)="Logout()">Logout</a>
+     
+
       </li>
     </ul>
   </div>
@@ -14,13 +17,14 @@
   <div class="col s12 m7">
     <div class="card">
       <div class="card-content">
-        <span>Username :{{userClaims.UserName}}</span>
+        <app-add-products></app-add-products>
+        <!--<span>Username :{{userClaims.UserName}}</span>
         <br>
         <span>Email : {{userClaims.Email}}</span>
         <br>
         <span>Full Name : {{userClaims.FirstName}} {{userClaims.LastName}}</span>
         <br>
-        <span>Logged On : {{userClaims.LoggedOn}}</span>
+        <span>Logged On : {{userClaims.LoggedOn}}</span>-->
       </div>
     </div>
   </div>

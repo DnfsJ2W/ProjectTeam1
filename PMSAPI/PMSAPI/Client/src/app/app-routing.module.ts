@@ -40,6 +40,11 @@ export const appRoutes:Routes=[
         path:'**',
         loadChildren: () => import('./pages/category/category.module').then(t => t.CategoryModule)
     },
-    // { path : '', redirectTo:'/login', pathMatch : 'full'}
+    { 
+        path : 'login',
+         redirectTo:'/login',
+          pathMatch : 'full'
+    }
 
 ];
+export class AppRoutingModule{}

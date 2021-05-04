@@ -18,13 +18,13 @@ export class SignInComponent implements OnInit {
 
   OnSubmit(userName,password){
      this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
-      debugger;
+    
       localStorage.setItem('userToken',data.access_token);
       this.router.navigate(['/home']);
     },
     (err : HttpErrorResponse)=>{
 
-      debugger;
+     
       console.log(err);
       this.isLoginError = true;
     });

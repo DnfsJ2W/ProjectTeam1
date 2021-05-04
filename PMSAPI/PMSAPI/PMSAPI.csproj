@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -29,6 +30,7 @@
     </NuGetPackageImportStamp>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+    <TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -244,6 +246,42 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Client\karma.conf.js" />
+    <Content Include="Client\protractor.conf.js" />
+    <Content Include="Client\screenshot.png" />
+    <Content Include="Client\src\app\add-products\add-products.component.css" />
+    <Content Include="Client\src\app\add-products\add-products.component.html" />
+    <Content Include="Client\src\app\app.component.css" />
+    <Content Include="Client\src\app\app.component.html" />
+    <Content Include="Client\src\app\components\topbar\top-bar.component.css" />
+    <Content Include="Client\src\app\home\home.component.css" />
+    <Content Include="Client\src\app\home\home.component.html" />
+    <Content Include="Client\src\app\pages\cart\cart-page.component.css" />
+    <Content Include="Client\src\app\pages\cart\cart-page.component.html" />
+    <Content Include="Client\src\app\pages\cart\cart-popup\cart-popup.component.css" />
+    <Content Include="Client\src\app\pages\cart\cart-popup\cart-popup.component.html" />
+    <Content Include="Client\src\app\pages\category\category.component.css" />
+    <Content Include="Client\src\app\pages\category\category.component.html" />
+    <Content Include="Client\src\app\pages\product\product.component.css" />
+    <Content Include="Client\src\app\pages\product\product.component.html" />
+    <Content Include="Client\src\app\user\sign-in\sign-in.component.css" />
+    <Content Include="Client\src\app\user\sign-in\sign-in.component.html" />
+    <Content Include="Client\src\app\user\sign-up\sign-up.component.css" />
+    <Content Include="Client\src\app\user\sign-up\sign-up.component.html" />
+    <Content Include="Client\src\app\user\user.component.css" />
+    <Content Include="Client\src\app\user\user.component.html" />
+    <Content Include="Client\src\assets\css\styles.css" />
+    <Content Include="Client\src\assets\imgs\blue-stripe-stoneware-plate.jpg" />
+    <Content Include="Client\src\assets\imgs\hand-painted-blue-flat-dish.jpg" />
+    <Content Include="Client\src\assets\imgs\heme.jpg" />
+    <Content Include="Client\src\assets\imgs\logo.png" />
+    <Content Include="Client\src\assets\imgs\logobysumit.png" />
+    <Content Include="Client\src\assets\imgs\mashiko-yaki-green-small-plate.jpg" />
+    <Content Include="Client\src\assets\imgs\mashiko-yaki-indigo-small-plate.jpg" />
+    <Content Include="Client\src\assets\imgs\mashiko-yaki-saucer.jpg" />
+    <Content Include="Client\src\assets\imgs\plates-header.jpg" />
+    <Content Include="Client\src\favicon.ico" />
+    <Content Include="Client\src\index.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -272,11 +310,58 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Client\.browserslistrc" />
+    <Content Include="Client\.editorconfig" />
+    <Content Include="Client\angular.json" />
+    <Content Include="Client\e2e\tsconfig.e2e.json" />
+    <Content Include="Client\package-lock.json" />
+    <Content Include="Client\package.json" />
+    <Content Include="Client\README.md" />
+    <Content Include="Client\src\assets\.gitkeep" />
+    <Content Include="Client\src\assets\mock-data\products.json" />
+    <Content Include="Client\src\tsconfig.app.json" />
+    <Content Include="Client\src\tsconfig.spec.json" />
+    <Content Include="Client\tsconfig.json" />
+    <Content Include="Client\tslint.json" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <Content Include="Scripts\client\assets\mock-data\products.json" />
+    <Content Include="Scripts\client\fontawesome-webfont.eot" />
+    <Content Include="Scripts\client\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\client\fontawesome-webfont.woff" />
+    <Content Include="Scripts\client\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\client\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\client\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\client\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\client\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\client\main-es2015.js.map" />
+    <Content Include="Scripts\client\polyfills-es2015.js.map" />
+    <Content Include="Scripts\client\runtime-es2015.js.map" />
+    <Content Include="Scripts\client\styles.css.map" />
+    <Content Include="Scripts\client\vendor-es2015.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\client\assets\css\styles.css" />
+    <Content Include="Scripts\client\assets\imgs\blue-stripe-stoneware-plate.jpg" />
+    <Content Include="Scripts\client\assets\imgs\hand-painted-blue-flat-dish.jpg" />
+    <Content Include="Scripts\client\assets\imgs\heme.jpg" />
+    <Content Include="Scripts\client\assets\imgs\logo.png" />
+    <Content Include="Scripts\client\assets\imgs\logobysumit.png" />
+    <Content Include="Scripts\client\assets\imgs\mashiko-yaki-green-small-plate.jpg" />
+    <Content Include="Scripts\client\assets\imgs\mashiko-yaki-indigo-small-plate.jpg" />
+    <Content Include="Scripts\client\assets\imgs\mashiko-yaki-saucer.jpg" />
+    <Content Include="Scripts\client\assets\imgs\plates-header.jpg" />
+    <Content Include="Scripts\client\favicon.ico" />
+    <Content Include="Scripts\client\fontawesome-webfont.svg" />
+    <Content Include="Scripts\client\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\client\index.html" />
+    <Content Include="Scripts\client\main-es2015.js" />
+    <Content Include="Scripts\client\plates-header.jpg" />
+    <Content Include="Scripts\client\polyfills-es2015.js" />
+    <Content Include="Scripts\client\runtime-es2015.js" />
+    <Content Include="Scripts\client\styles.css" />
+    <Content Include="Scripts\client\vendor-es2015.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -349,11 +434,58 @@
       <DependentUpon>202105031658493_addednewcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="Client\e2e\app.po.ts" />
+    <TypeScriptCompile Include="Client\src\app\add-products\add-products.component.spec.ts" />
+    <TypeScriptCompile Include="Client\src\app\add-products\add-products.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\auth\auth.guard.spec.ts" />
+    <TypeScriptCompile Include="Client\src\app\auth\auth.guard.ts" />
+    <TypeScriptCompile Include="Client\src\app\auth\auth.interceptor.ts" />
+    <TypeScriptCompile Include="Client\src\app\components\quantity-control\quantity-control.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\components\topbar\topbar.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="Client\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\model\cart.ts" />
+    <TypeScriptCompile Include="Client\src\app\model\product.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\cart\cart-base.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\cart\cart-page-routing.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\cart\cart-page.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\cart\cart-page.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\cart\cart-popup\cart-popup.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\category\category-routing.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\category\category.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\category\category.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\product\product-routing.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\product\product.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\pages\product\product.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\services\cart.service.ts" />
+    <TypeScriptCompile Include="Client\src\app\services\products.service.ts" />
+    <TypeScriptCompile Include="Client\src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\shared\user.model.ts" />
+    <TypeScriptCompile Include="Client\src\app\shared\user.service.ts" />
+    <TypeScriptCompile Include="Client\src\app\user\sign-in\sign-in.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\user\sign-up\sign-up.component.ts" />
+    <TypeScriptCompile Include="Client\src\app\user\user.component.ts" />
+    <TypeScriptCompile Include="Client\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Client\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Client\src\main.ts" />
+    <TypeScriptCompile Include="Client\src\polyfills.ts" />
+    <TypeScriptCompile Include="Client\src\test.ts" />
+    <TypeScriptCompile Include="Client\src\typings.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

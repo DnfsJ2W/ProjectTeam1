@@ -1,7 +1,5 @@
-/**
- * Created by andrew.yang on 7/27/2017.
- */
-export class Product {
+
+export interface Product {
     title: string;
     brand?: string;
     price?: number;
