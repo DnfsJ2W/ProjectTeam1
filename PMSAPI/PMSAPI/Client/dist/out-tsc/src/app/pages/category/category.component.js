@@ -9,9 +9,16 @@ let CategoryComponent = class CategoryComponent {
         this.cartService = cartService;
         this.router = router;
         this.load = () => {
-            this.sub = this.productService.getProducts('./Scripts/client/assets/mock-data/products.json').subscribe((res) => {
-                this.products = res;
-            });
+            debugger;
+            this.sub = this.productService.getProducts('.Scripts\\client\\assets\\mock-data\\products.json').subscribe(data => {
+                console.log(data);
+                this.products = data;
+            }, err => {
+                console.log(err);
+            }
+            /*(res: any) => {
+            this.products = res;
+        }*/ );
         };
         this.addToCart = (product) => {
             this.cartService.addToCart({ product, quantity: 1 });

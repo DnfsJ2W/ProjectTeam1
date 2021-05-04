@@ -1,28 +1,41 @@
-import {Injectable} from "@angular/core";
-import {HttpClient,HttpErrorResponse,HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs/Rx";
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
 import { map,catchError } from 'rxjs/operators';
 import { Product } from "../model/product";
-import { throwError } from "rxjs";
+
+const httpOptions = {
+  headers: new HttpHeaders({ "Content-Type": "application/json", "No-Auth" : "True"})
+};
 
 @Injectable()
 export class ProductService {
 
-    constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-    public getProducts(dataURL:string){
-   
-
-//console.log(this.http.get<Product[]>(dataURL));
-         return this.http.get(dataURL).pipe(
-             map((res:Response) => {
-                 return res.json();
-             }), catchError ( error => {
-                 return throwError('Somthing went wrong!');
-             })
-         )
-
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error("An error occurred:", error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code. The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` + `body was: ${error.error}`
+      );
     }
+    // return an observable with a user-facing error message
+    return throwError(error);
+  }
+  private extractData(res: Response) {
+    let body = res.json();
+    return body || {};
+  }
+  public getProducts(dataURL: string): Observable<any> {
+    return this.http.get<any>(dataURL, httpOptions).pipe(
+      map((res: Response) => res),
+      catchError(this.handleError)
+    )
+  }
     endpoint = 'https://localhost:44326/api/';
   
     getProduct(PID: number) {

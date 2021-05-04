@@ -108,7 +108,7 @@ CartPageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInj
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\clone\ProjectTeam1\PMSAPI\PMSAPI\Client\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! D:\PMS\ProjectTeam1\PMSAPI\PMSAPI\Client\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -861,26 +861,40 @@ SharedModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjec
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
 
 
+const httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ "Content-Type": "application/json", "No-Auth": "True" })
+};
 class ProductService {
     constructor(http) {
         this.http = http;
         this.endpoint = 'https://localhost:44326/api/';
     }
+    handleError(error) {
+        if (error.error instanceof ErrorEvent) {
+            // A client-side or network error occurred. Handle it accordingly.
+            console.error("An error occurred:", error.error.message);
+        }
+        else {
+            // The backend returned an unsuccessful response code. The response body may contain clues as to what went wrong,
+            console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error}`);
+        }
+        // return an observable with a user-facing error message
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
+    }
+    extractData(res) {
+        let body = res.json();
+        return body || {};
+    }
     getProducts(dataURL) {
-        //console.log(this.http.get<Product[]>(dataURL));
-        return this.http.get(dataURL).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((res) => {
-            return res.json();
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(error => {
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])('Somthing went wrong!');
-        }));
+        return this.http.get(dataURL, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])((res) => res), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError));
     }
     getProduct(PID) {
         return this.http.get(this.endpoint + '/GetProduct/' + PID);
@@ -1698,9 +1712,16 @@ class CategoryComponent {
         this.cartService = cartService;
         this.router = router;
         this.load = () => {
-            this.sub = this.productService.getProducts('./Scripts/client/assets/mock-data/products.json').subscribe((res) => {
-                this.products = res;
-            });
+            debugger;
+            this.sub = this.productService.getProducts('.\\Scripts\\client\\assets\\mock-data\\products.json').subscribe(data => {
+                console.log(data);
+                this.products = data;
+            }, err => {
+                console.log(err);
+            }
+            /*(res: any) => {
+            this.products = res;
+        }*/ );
         };
         this.addToCart = (product) => {
             this.cartService.addToCart({ product, quantity: 1 });

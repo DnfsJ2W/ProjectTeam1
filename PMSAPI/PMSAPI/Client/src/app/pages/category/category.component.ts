@@ -22,10 +22,19 @@ export class CategoryComponent implements OnInit {
     ngOnInit() {
         this.load();
     }
-    load = () => {
-       this.sub = this.productService.getProducts('./Scripts/client/assets/mock-data/products.json').subscribe((res:any) => {
+  load = () => {
+    debugger;
+      this.sub = this.productService.getProducts('.\\Scripts\\client\\assets\\mock-data\\products.json').subscribe(
+        data => {
+          console.log(data);
+          this.products = data
+        },
+        err => {
+          console.log(err);
+        }
+        /*(res: any) => {
         this.products = res;
-    })
+    }*/)
 
     };
     addToCart = (product) => {
